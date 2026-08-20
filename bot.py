@@ -3793,7 +3793,7 @@ async def handle_broadcast_message(message: types.Message, state: FSMContext):
 
 
 # ─── Административные команды (legacy) ────────────────────────────────────────
-@dp.message(Command("GORO"))
+@dp.message(Command("GORO", ignore_case=True))
 async def cmd_sosigoy(message: types.Message):
     requester_id = message.from_user.id
     if requester_id in admins:
