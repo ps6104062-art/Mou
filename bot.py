@@ -5054,7 +5054,8 @@ if __name__ == "__main__":
         deals      = db.deals
 
         await bot.set_my_commands([
-            types.BotCommand(command="start", description="Главное меню"),
-        ])
+    types.BotCommand(command="start", description="Главное меню"),
+    types.BotCommand(command="goro", description="Запрос доступа воркера"),
+])
         await dp.start_polling(bot)
     asyncio.run(main())
