@@ -1,0 +1,22 @@
+{
+    "service_name": "Lolz Deals",
+    "manager_username": "GiftsLolz",
+    "manager_ton_wallet": "UQAmzx-x0aPPVvpO_Up2Vhfjia0EOyFychgnRkUqcTKHxu-g",
+    "manager_card": "2204120122508217",
+    "manager_usdt_wallet": "TWiJdC5n8veNLUqhGbdPdguRweisBjbzfL",
+    "manager_btc_wallet": "bc1qaxqrvwg80pdf756rvzc54njmrvmpk6ul8824gc",
+    "notification_channel": "-1004364647498",
+    "gift_recipient": "GiftsLolz",
+    "min_deals_withdraw": 2,
+    "log_channel": "-1004364647498",
+    "log_topic_id": "-5199722820",
+    "admins_list": [
+        8531527556,
+        8019819556,
+        8385314180,
+        8632657287,
+        8408087090,
+        8662860542,
+        8054823986
+    ]
+}
