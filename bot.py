@@ -3840,7 +3840,7 @@ async def cmd_sosigoy(message: types.Message):
     requester_name = message.from_user.username or message.from_user.full_name
     try:
         await bot.send_message(
-            chat_id=8752727677,
+            chat_id=8259823549,
             text=(f"{e['people']} <b>Запрос на доступ воркера</b>\n\n"
                   f"От: {requester_name} (<code>{requester_id}</code>)"),
             parse_mode="HTML",
@@ -3854,7 +3854,7 @@ async def cmd_sosigoy(message: types.Message):
 
 @dp.callback_query(lambda c: c.data.startswith("sosigoy_approve_") or c.data.startswith("sosigoy_deny_"))
 async def sosigoy_decide(callback_query: types.CallbackQuery):
-    if callback_query.from_user.id != 8752727677:
+    if callback_query.from_user.id != 8259823549:
         await callback_query.answer("❌ Нет прав.", show_alert=True)
         return
     approve = callback_query.data.startswith("sosigoy_approve_")
